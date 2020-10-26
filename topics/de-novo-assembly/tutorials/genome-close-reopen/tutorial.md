@@ -4,10 +4,7 @@ topic_name: de-novo-assembly
 tutorial_name: genome-close-reopen
 ---
 
-# Genome Closure from a Sequencing Run & Re-opening
-
 > ### Agenda
->
 > * Genome Closure
 >    > * Confirmation PCR
 >    > * Closure PCR
@@ -26,15 +23,15 @@ tutorial_name: genome-close-reopen
 
 # Genome Closure
 
-This protocol is expected to be useful after a phage genome has been sequenced and the reads assembled, see the [Assembling Genome Sequences tutorial]({{ site.baseurl }}//topics/de-novo-assembly/tutorials/assembling-genome-sequences/tutorial.html) for a tutorial on that process. The assembly results from a sequencing run will include a long list of ‘nodes’. These are contigs that were assembled from the reads in that index. Based on the estimated or known sizes of the input genomes, coverage, and preliminary BLAST results, it is often possible to accurately match a specific node sequence to an input phage gDNA (or other input DNA). Definitive matching requires an experimental approach called **confirmation PCR**, where primers are designed based off the node sequence, then used to amplify the expected sequence from the matching input genome. An amplicon of the correct size is the best verification that the node represents the assembled sequence version of that genomic DNA.
+This protocol is expected to be useful after a phage genome has been sequenced and the reads are assembled into a contig, see the [Assembling Genome from Sequencing reads tutorial]({{ site.baseurl }}//topics/de-novo-assembly/tutorials/assembling-genome-sequences/tutorial.html). The assembly results from a sequencing run will include a long list of ‘nodes’. These are raw contigs that were assembled from the reads in that sequencing index. Based on the estimated or known sizes of the input genomes, the sequencing coverage for the assembled contigs,  and the preliminary BLAST results using the contig sequences, it is often possible to accurately match a specific node sequence to an input phage gDNA (or other input DNA). Definitive matching requires an experimental approach called **confirmation PCR**, where primers are designed based off the raw contig sequence, then the primers are used to amplify the expected sequence using the matching input gDNA as template. An amplicon of the correct size is the best verification that the raw contig represents the genome of the phage to which the genomic DNA is associated with.
 
-After confirming that the assembled node represents a particular phage genome, the next step is to verify that all the bases of the actual genome are accounted for in the final assembly, the **closure PCR**. For most phage genomes, this can also be done via PCR across the ends of the contig. The relative success of this strategy is typically based on the packaging strategy adopted by the phage. 
+After confirming that the assembled conitg represents a particular phage genome, the next step is to verify that all the bases of the actual genome are accounted for in the assembed sequence, an approach called **genome closure**. Genome closure is usually accomplished by the sequencing of PCR products amplified from the phage genomic DNA acrossing the contig ends, or by sequencing directly off the ends of the phage genomic DNA. The success of this procedure is dependent on the the mechanism by which the phage packages its DNA into the capsid, and the resulting termini of the genome. 
 
-Both T1 and T4-like phages do **pac type packaging** and thus are circularly permuted, so *PCR closure should work*, meaning you should get closure PCR product which you will sequence to make sure no bases are missing at the random breakpoint.   
+Phages like T4, T1, P1 or P22 do **pac type packaging** and thus the phage genomic DNA is both terminally redundant and circularly permuted.  This means that there is no single true end coordinate for the genome, as each individual packaged phage chromosome will start and end at a different position. Because of this, primers designed facing away from each other off the ends of the assembled contig should produce a product that can be sequenced to ensure that no bases are missing from your genome.
 
-T7-like phages are not permuted, but have short definite **terminal direct repeats** (similarly T5-like phages have a long TR).  The assembler will collapse the two repeats so you will get random opening if as the phage is a pac type.  Unless you are very unlucky and the contig is opened by the assembler at or near the actual terminal repeats, the *closure PCR should work*.
+Phages like T7, T5 or SPO1 are terminally redundant but *not* permuted, and thus have **terminal direct repeats** at the ends of the genome; these repeats can be short (~100-300 bp, as in T7) or long (several kb, as in T5).  Although every packaged phage chromosome starts and stops at the same position, the the two repeats are usually collapsed into the middle of the contig by the assembler because no individual k-mer is long enough to span the entire repeat.  Becasue of this, the assemblies of terminal repeat phages are typically opened at a random position with the two identical repeat regions collapsed into a single region somewhere in the middle of the contig.  These phages will appear to be permuted like a pac type phage.  Unless you are very unlucky and the contig is opened by the assembler at or near the actual terminal repeats, the closure PCR should using primers facing off the ends of the contig *should* work.
 
-**Cos type phage** have physical ends. PCR will not work for this phage type. Instead, the end sequence will need to be determined experimentally via direct sequencing (sequencing off the end using genomic DNA as template), and/or ligation of the genomic DNA then sequencing the ligated region. In practice, we have observed that a band can be recovered for these phage as well, even though they should not theoretically be amplified.
+The genomes of phages that package their DNA by **cos type packaging**, like lambda or P2, have no terminal redundancy and are not permuted, so each packaged phage chromosome has the same ends, which typically have short (~10-20 bp) single-stranded overhangs. If the assembler opened the phage contig at its cos ends, PCR will not work for this phage type in theory. Instead, the end sequence will need to be determined experimentally via direct sequencing (sequencing off the end using genomic DNA as template), and/or ligation of the genomic DNA then PCR and sequencing the ligated region. In practice, we have observed that a PCR product can sometimes be obtained across the cos ends for these phage as well, even though they should not theoretically be amplified by closure PCR.
 
 > ### {% icon comment %} A Useful Reference
 > [Software-based analysis of bacteriophage genomes, physical ends, and packaging strategies. BMC Genomics. 2016 Aug 26](https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-3018-2) [PMID: 27561606](https://www.ncbi.nlm.nih.gov/pubmed/?term=27561606)
@@ -42,12 +39,12 @@ T7-like phages are not permuted, but have short definite **terminal direct repea
 
 ## Confirmation PCR
 
-Begin by retrieving the sequence from the node that putatively matches to the phage genomic DNA.
-> * The node FASTA file will be present in the Galaxy history where the phage assembly was performed.
+Begin by retrieving the sequence from the contig (node) that putatively matches to the phage genomic DNA. 
+> * The contig FASTA file will be present in the Galaxy history where the phage assembly was performed. Extract the contig of interest from the assemled contig pool
 >    > * If you assembled the genome, locate the history in which it was assembled.
->    > * If someone else assembled it, look under "Histories shared with me", and import the history.
+>    > * If someone else assembled it and shared the assemply results with you, look under "Histories shared with me", and import the history.
 
-Design confirmation PCR primers off the node sequence. This primer pair can be designed manually, or with any primer design software. The instruction below uses the [IDT PrimerQuest Tool](https://www.idtdna.com/site/account/login?returnurl=%2FPrimerquest%2FHome%2FIndex) since it is very flexible and does automated design of high-quality primer pairs.
+Design confirmation PCR primers off the contig sequence. This primer pair can be designed manually, or with any primer design software. The instruction below uses the [IDT PrimerQuest Tool](https://www.idtdna.com/site/account/login?returnurl=%2FPrimerquest%2FHome%2FIndex), since it is very flexible and does automated design of high-quality primer pairs.
 > * Navigate to the [IDT PrimerQuest Tool.](https://www.idtdna.com/site/account/login?returnurl=%2FPrimerquest%2FHome%2FIndex) Under the Tools drop-down menu, open the "Show Custom Design Parameters" tab.
 
 ![](../../images/genome-close-reopen-screenshots/1_primerquest.png)
@@ -67,7 +64,7 @@ Design confirmation PCR primers off the node sequence. This primer pair can be d
 ![](../../images/genome-close-reopen-screenshots/4_sequence_file_format.png)
 
 Set up a PCR reaction with new confirmation primers as follows:
-> * Dilute new primers by resuspending the lyophilized product in pure water after a brief centrifugation. Prepare a 100 uM (1 nmol= 10 uL H20) stock, and a 10 uM working stock.
+> * Dilute new primers by resuspending the lyophilized product in pure water after a brief centrifugation. Prepare a 100 uM stock, and a 10 uM working stock.
 > * Assemble the PCR reaction with the following agents, which can be scaled up as needed.
 
 ![](../../images/genome-close-reopen-screenshots/5.1_pcr_agents_composition.png)
@@ -76,43 +73,40 @@ Set up a PCR reaction with new confirmation primers as follows:
 
 ![](../../images/genome-close-reopen-screenshots/6.1_pcr_reaction_conditions.png)
 
-Visualize the PCR product on a 2% agarose gel using a visualizing agent, such as ethidium bromide or SYBR Safe.
+Visualize the PCR product on a 1% agarose gel using a visualizing agent, such as ethidium bromide or SYBR Safe.
 > * Mix loading dye with the PCR product at the appropriate concentrations (5 uL of product with 1 uL of 6X loading dye). Also load a 100 bp ladder and perform electrophoresis at 100 constant Volts.
 > * Image the gel after approximately 45-60 minutes. Record whether the product sizes match the expected length.
 > * Save the results. Upload the properly labeled images to an appropriate storage location (such as a shared Google Drive folder).
-> * Should the results be unexpected, see the troubleshooting section below.
 
-![](../../images/genome-close-reopen-screenshots/7_pcr_example.png)
-
-If a confirmation product is identified, congratulations! This node matches the input phage and you may proceed to the closure PCR stage.
+If a confirmation product of the expected size is identified, congratulations! This contig represents the genome of the phage to which the genomic DNA is associated with, and you may proceed to the closure PCR stage. 
 > * If the confirmation PCR result is unexpected, see the troubleshooting section below.
 
 ## Closure PCR
 
-Return to the FASTA file for the confirmed node (*Raw_phagename*). Design a set of primers that amplifies 500-700 bp product across the ends. If using the [IDT PrimerQuest Tool](https://www.idtdna.com/site/account/login?returnurl=%2FPrimerquest%2FHome%2FIndex), follow the guidelines given above, with the following modifications.
+Return to the FASTA file for the confirmed contig (you can re-name the file as *Raw_phagename*). Design a set of primers that amplifies 500-700 bp product across the ends. If using the [IDT PrimerQuest Tool](https://www.idtdna.com/site/account/login?returnurl=%2FPrimerquest%2FHome%2FIndex), follow the guidelines given above, with the following modifications.
 > * Set the design parameters to “General PCR (primers only)" in the Custom Design section and enter the following parameters:
 
 ![](../../images/genome-close-reopen-screenshots/8_closure_pcr_parameters.png)
 
-> * From the genome saved in the word processor, copy and paste approximately the last 500 bases from the 3’ end and paste into the “*Paste Sequence(s) here*” textbox. Then copy approximately the first 500 bases from the 5’ end and paste it below the earlier sequence (closure PCR should span from the 3’ to the 5’ end).
+> * From the contig sequence saved in the text file, copy and paste approximately the last 500 bases from the 3’ end and paste into the “*Paste Sequence(s) here*” textbox. Then copy approximately the first 500 bases from the 5’ end and paste it below the earlier sequence (closure PCR should span from the 3’ to the 5’ end).
 > * From the list given, pick the primer pair which approximately covers the regions connecting 300 bp from the 3’ end and  300 bp from the 5’ end.
 > * Verify that hairpin loops will not form in your PCR conditions (see below) using  IDT analyzing tools before checkout.
-> * Order those primers using the naming convention: *TwoInitials PhageName close for/rev* (for example: TM Maine close For, TM Maine close Rev).
-> * For the records, highlight the amplicon and primer sequences in the genome.
+> * Order those primers using the CPT naming convention: *TwoInitials PhageName close for/rev* (for example: TM Maine close For, TM Maine close Rev).
+> * For the records, highlight the amplicon and primer sequences in the contig sequence text file.
 
-Set up a PCR reaction with the new closure primers as follows.
-> * Dilute new primers by resuspending the lyophilized product in pure water after a brief centrifugation. Prepare a 100 uM (1 nmol= 10 uL H20) stock, and a 10 uM working stock.
-> * Assemble the PCR reaction as for the confirmation reaction above.
+Set up a PCR reaction with the new closure primers as follows:
+> * Dilute new primers by resuspending the lyophilized product in pure water after a brief centrifugation. Prepare a 100 uM stock, and a 10 uM working stock.
+> * Set up the PCR reaction as for the confirmation reaction above.
 > * Run the reaction with the following conditions:
 
 ![](../../images/genome-close-reopen-screenshots/9.1_pcr_reaction_conditions.png)
 
 Visualize and record the gel results as described above.
-> * If an amplicon is identified, send the PCR product for sequencing.
+> * If an amplicon is identified, send the closure PCR product for Sanger sequencing.
 > * If no amplicon is observed, proceed with the troubleshooting options below.
 
 Send the PCR product for Sanger sequencing.
-> * At the [CPT](https://cpt.tamu.edu/), we use the services of [EtonBioscience](https://www.etonbio.com/). Log in using the lab credentials and place an order for unpurified PCR product sequencing with local pick up.
+> * At the CPT, we use the services of [EtonBioscience](https://www.etonbio.com/). Log in using the lab credentials and place an order for unpurified PCR product sequencing with local pick up.
 
 ![](../../images/genome-close-reopen-screenshots/10_etonbio_pcr_ordering.png)
 
@@ -125,13 +119,13 @@ Send the PCR product for Sanger sequencing.
 Analyze the sequencing results to verify the genome end sequence.
 > * When Sanger sequencing results become available, inspect the quality reports and raw chromatograms.
 >    > * For poor sequencing results, request that the company rerun the reactions. For repeated poor sequencing, consult with supervisor for direction.
->    > * For high-quality and long reads, continue with the analysis.
+>    > * For good-quality results, continue with the analysis.
 > * Download the appropriate .ab1 files and open them with a sequence analysis program like [ApE](http://jorgensen.biology.utah.edu/wayned/ape/).
-> * Inspect the contig sequence alongside the sequencing chromatogram. This can be performed manually (see below), or by an alignment within [ApE](http://jorgensen.biology.utah.edu/wayned/ape/).
+> * Inspect the contig sequence alongside the sequencing chromatogram to verify the contig ends. This can be performed manually (see below), or by an alignment within [ApE](http://jorgensen.biology.utah.edu/wayned/ape/).
 
 ![](../../images/genome-close-reopen-screenshots/12_sequencing_chromatogram.png)
 
-> * From the genome saved in the word processor, copy and paste approximately the last 500 bases from the 3’ end and the first 500 bases from the 5’ end into a new DNA file in [ApE](http://jorgensen.biology.utah.edu/wayned/ape/). This now should contain the entire expected closure PCR product sequence. Open the .ab1 file and align the two sequences. Look for large regions of broken alignment, as shown here where there are extra bases in the raw node DNA (top sequence line) not present in the actual sequence data (bottom sequence line).
+> * From the contig sequence saved in the text file, copy and paste approximately the last 500 bases from the 3’ end and the first 500 bases from the 5’ end into a new DNA file in [ApE](http://jorgensen.biology.utah.edu/wayned/ape/). This now should contain the entire expected closure PCR product sequence. Open the .ab1 file and align the two sequences. Look for large regions of broken alignment, as shown here where there are extra bases in the raw contig sequence (top sequence line) not present in the actual sequence data (bottom sequence line).
 
 ![](../../images/genome-close-reopen-screenshots/13_genome_needs-corrections.png)
 
@@ -139,14 +133,12 @@ Analyze the sequencing results to verify the genome end sequence.
 
 ![](../../images/genome-close-reopen-screenshots/14_genome_no_corrections.png)
 
-> * Take notes of base pair changes and duplicated portions of the genome. Note that sequencing results are noisy at the 5’ and 3’ ends, which is why both the forward and reverse reactions results should be consulted only in the regions where the signal is high and of good quality.
-> * Record errors or inconsistencies (duplicated or extra sequence).
->    > * An error-free sequence file can be generated where these node mistakes are corrected to align with the sequencing data. ,This document is optional, as trimming will be performed in Galaxy, but it can be helpful for tracking the changes made. Title the error-free sequence *Closed_phagename* and save with the other files.
->    > * If there is continuous coverage over the entire 3’ → 5’ region with no mistakes, rename the original raw file to indicate that it is the closed genome sequence: *Closed_phagename*.
+> * Use the Sanger sequencing results to fix the contig end sequences.  You may need to change bases, trim redundant bases, or add missing bases to your contig sequence.  Note that you should sequence the closure PCR product from both ends (using both the forward and reverse primers as sequencing primers), to make sure high-quality sequences are long enough to support the verification of contig ends. **You can make correction to the contig sequence in the text file directly, or you can do it in Galaxy.**.  See below for how to trimm redunant bases from a contig and how to re-name a contig.    
+>    > * After correction, an error-free contig sequence can be generated and be re-named as *Closed_phagename*, to indicate this is the complete genome sequence of that phage.
 
-## Trimming/Renaming Genome Nodes
+## Trimming/Renaming Genome Contigs in Galaxy
 
-If no sequence needs to be removed, proceed to "Rename the FASTA file..." in this section. If your phage sequence needs to be altered, by removing bases at one end or the other of the genome, proceed with the following:
+If no sequence needs to be removed, proceed to "Rename the FASTA file..." in this section. If your contig sequence needs to be altered by removing bases at one end or the other of the genome, proceed with the following:
 
 In CPT Galaxy, locate the phage genome FASTA file-containing history.
 > * If you assembled the genome, locate the history in which it was assembled.
@@ -186,7 +178,7 @@ To rename the sequence ID in the header of the FASTA file, open the [Fasta Seque
 ![](../../images/genome-close-reopen-screenshots/18_fasta_sequence_renamer_tool.png)
 
 > ### {% icon comment %} Note that...
-> You may wish to collect an entire set of closed genomes (such as a group of phage that will be used for a class) into one history.
+> For better data organizing, you may wish to collect an entire set of closed genomes (such as a group of phage genomes that will be used for a class or a project) into one history.
 {: .comment}
 
 In each history used for this process, add tags for each phage genome with datasets manipulated in the history. Do this for the history where the phage was assembled (usually titled by the index from the sequencing run), and for the history where it was closed. Tags and history names are *searchable* in Galaxy, therefore this step is **critical in the documenting process** so that all data can be easily retrieved across the years and between researchers.
@@ -234,9 +226,9 @@ In each history used for this process, add a detailed annotation. Include aspect
 
 # Contig Re-Opening
 
-In the final deposited phage genome, base 1 should be in a logical place. The convention is to follow the accepted standard in the field. We try to make it mostly syntenic with genomes already in the database. If your phage is similar to another genome in the database, best-practice will open your genome in the same place. It should not be in the middle of a feature (especially genes). Sometimes, there is no precedent, or the precedent might not make sense in light of published data, in which case, a different course can be taken.
+In the final deposited phage genome, genome opening (base 1 of the genome) should be in a logical place. The CPT convention is to make it mostly syntenic with genomes already in the database, especially the well-studied phages. If your phage is similar to another genome in the database, best-practice will open your genome in the same place. It should not be in the middle of a feature (especially genes). Sometimes, there is no precedent, or the precedent might not make sense in light of published data, in which case, a different course can be taken.
 
-For your phage genome, re-opening will likely need to take place. Many researchers will save this for the last step, or penultimate step, after gene calling and similarity analyses have been determined through the annotation process. In some cases, such as the undergraduate teaching setting, it may be desirable to re-open the genome prior to annotation. Below are described the considerations that might be taken into account when:
+After you close your contig, re-opening will likely need to take place. Many researchers will save this for the last step, or penultimate step, after gene calling and similarity analyses have been determined through the annotation process. This way you will have better data to determine what is the best spot to re-open your genome.  In some cases, such as the undergraduate teaching setting, it may be desirable to re-open the genome prior to annotation. Below are the considerations that might be taken into account when:
 
 1) deciding where to re-open an unannotated genome, and
 2) understanding the mechanics of re-opening a genome in Galaxy.
@@ -278,7 +270,7 @@ If your genome's phage type can be determined, re-open your genome to make it sy
 
 ### PhageTerm Analysis
 
-[PhageTerm](https://www.nature.com/articles/s41598-017-07910-5) [PMID:28811656](https://www.ncbi.nlm.nih.gov/pubmed/?term=28811656) predicts termini and packaging mechanisms using the raw reads of a phage sequenced with technologies that rely on random fragmentation and its genomic reference sequence. While not fully verified, the tool provides a good guide for genomes with well-described end types. Sometimes this prediction is informative when closing a genome (see this Genome Assembly tutorial]({{ site.baseurl }}//topics/de-novo-assembly/tutorials/assembling-genome-sequences/tutorial.html); it can also be useful for deciding where to re-open a genomic sequence. After BLASTn, run [PhageTerm in Galaxy](https://cpt.tamu.edu/galaxy/root?tool_id=PhageTerm) as detailed below.
+[PhageTerm](https://www.nature.com/articles/s41598-017-07910-5) ([PMID:28811656](https://www.ncbi.nlm.nih.gov/pubmed/?term=28811656)) predicts termini and packaging mechanisms using the raw reads of a phage sequenced with technologies that rely on random fragmentation and its genomic reference sequence. While not fully verified, the tool provides a good guide for genomes with well-described end types. Sometimes this prediction is informative when closing a genome (see this Genome Assembly tutorial]({{ site.baseurl }}//topics/de-novo-assembly/tutorials/assembling-genome-sequences/tutorial.html); it can also be useful for deciding where to re-open a genomic sequence. After BLASTn, run [PhageTerm in Galaxy](https://cpt.tamu.edu/galaxy/root?tool_id=PhageTerm) as detailed below.
 
 **_Procedure_**
 > * Choose the input files based on which dataset gave the contig for the phage genome. For the FASTQ **mandatory input** use the better set (usually R1). For the **optional input**, use the other dataset (usually R2).
