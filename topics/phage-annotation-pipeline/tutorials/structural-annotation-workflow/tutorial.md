@@ -25,7 +25,7 @@ This tutorial will walk you through the beginning of the phage genome annotation
 > [**Getting Started with Apollo**](https://cpt.tamu.edu/training-material/topics/introduction/tutorials/getting-started-with-apollo/tutorial.html).
 {: .hands_on}
 
-First, you must have an active account in Galaxy. For TAMU users, navigate to [**CPT TAMU Galaxy**](https://cpt.tamu.edu/galaxy) and log in with your NetID. For external users, navigate to [**CPT Galaxy Public**](https://cpt.tamu.edu/galaxy-pub). You should be presented with the main Galaxy page and an empty history.
+First, you must have an active account in Galaxy AND Apollo. For TAMU users, navigate to [**CPT TAMU Galaxy**](https://cpt.tamu.edu/galaxy) and log in with your NetID. For external users, navigate to [**CPT Galaxy Public**](https://cpt.tamu.edu/galaxy-pub). For instructions related to account registration, see the tutorials referenced above. You should be presented with the main Galaxy page and an empty history.
 
 > ### {% icon tip %} For BICH 464 Students
 > [**Updated for 2020**] 
@@ -49,7 +49,7 @@ The structural annotation workflow will analyze the DNA sequence of the input ge
 
 ![](../../images/structural-annotation-workflow-screenshots/2_find_workflow.png)
 
-The next [page](https://cpt.tamu.edu/galaxy/workflows/list_published) will list all the public and shared workflows developed at the CPT. The Phage Annotation Pipeline (PAP) workflows are available here. Look for most recent version labelled with the year and a version number, “PAP 2019 Structural (v #.#)”. Click on the drop-down menu arrow for that most recent structural workflow, and select “Import.”
+The next [page](https://cpt.tamu.edu/galaxy/workflows/list_published) will list all the public and shared workflows developed at the CPT. The Phage Annotation Pipeline (PAP) workflows are available here. Look for most recent version labelled with the year and a version number, “PAP 2020 Structural (v #.#)”. Click on the drop-down menu arrow for that most recent structural workflow, and select “Import.”
 
 ![](../../images/structural-annotation-workflow-screenshots/structual_flow.PNG)
 
@@ -75,6 +75,8 @@ Once the proper parameters have been filled out, click the *Run workflow* button
 > ### {% icon comment %} Troubleshooting: Dataset/Tool Turns Red
 > When a Galaxy tool fails, the dataset in the History column will turn red. If this happens, click on the failed dataset to expand it. Contact your herd leader to try troubleshooting the problem; common causes for failures at this step include not specifying the correct input dataset, not entering the organism name in the correct field, or accidentally running the wrong workflow. Clicking on the bug icon will give the user the option to submit a bug report. 
 > ![](../../images/structural-annotation-workflow-screenshots/9_report_bug.png)
+> 
+> Note: If you are a first-time user and you did not properly register a linked CPT Apollo account, the last few steps of the structural workflow _will fail_. Ensure that you have tried to access Apollo at least once, then contact CPT staff for help.  
 {: .comment}
 
 # Gene Calling
