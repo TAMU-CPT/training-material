@@ -35,7 +35,7 @@ Because the triplet code that encodes protein sequences is *degenerate* (as in, 
 
 ### Protein Sequence Comparisons
 
-Comparison of organisms by protein sequence is much more sensitive, as there is stronger pressure to conserve a protein sequence for the protein to retain its function. Phage genome organization is considered to be *modular*, meaning that individual genes or groups of genes can be shared across otherwise very different phages. It is not unusual for two phages to be very similar across the genome with only particular genes - such as phage tail fibers - being different.
+Comparison of organisms by protein sequence is much more sensitive, as there is stronger pressure to conserve a protein sequence so that the protein will retain its function. Phage genome organization is considered to be *modular*, meaning that individual genes or groups of genes can be shared across otherwise very different phages. It is not unusual for two phages to be very similar across the genome with only particular genes - such as phage tail fibers - being different.
 
 > ### {% icon comment %} Modular Phage Gene Examples
 > Comparing phages lambda and P22, one will see that they share similar integration and lysogen genes, *but* different morphogenesis genes (siphophage versus podophage, respectively).
@@ -73,16 +73,18 @@ The current comparative genomics workflow is set up to perform TaxID-restricted 
 > * From there, one can click on “start using this workflow” within the message box to be brought to the page containing all of the user’s imported workflows. Find the Phage comparative genomics workflow, click the drop-down menu, and select “Run.”
 
 > * The parameters for the workflow will then load in the center Galaxy panel. The inputs that the user needs to adjust are as follows:
->    > * Step one will be the FASTA dataset (raw nucleotide for genome)
->    > * Step two will be the protein dataset (Fasta translate)
->    > * Step three will be the phage’s FASTA DNA sequence again.
->    > * Optional: In steps four and five, the default number of top hit comparisons to display is given. For nucleotide, the default is five, because larger numbers can give an overwhelming MIST plot. For protein, the default is twenty. There is no harm to increasing this number.  
+>    > * Step 1. The **Input phage DNA sequence (FASTA)** will be the FASTA dataset (raw nucleotide for genome)
+>    > * Step 2. The **Export protein-coding genes for comparison (Galaxy Version 19.1.0.0)** will be the GFF3 file
+
+> ### {% icon tip %} When Retrieving Data from Apollo into Galaxy
+>When the **Retrieve Data** data tool is used to import data from Apollo into a Galaxy history, the resulting file is a combined GFF3 + FATSA which must be split into separate files before the COmparative Genomics workflow is run. Search for the **Split GFF3 + FASTA into sepatare parts** tool in the Tools pane, then run this tool on the combined file to generate the seprated files. When running the workflow, make sure that the input GFF3 is the split GFF3 and not the "Annotations and Sequence from Apollo" file.  
+{: .tip}
 
 > ### {% icon tip %} Note that…
 > The dataset numbers will be different for each user. Workflow versions also change regularly. 
 {: .tip}
 
-> * Once the inputs have been selected, click “Run workflow” at the top or the bottom of the page to execute the workflow. A message in a green box will appear to inform the user of a successful invocation of the phage comparative genomics workflow. From here, wait until all of the steps have completed and their datasets have turned green.
+> * Once the inputs have been selected, click “Run workflow” at the top of the page to execute the workflow. A message in a green box will appear to inform the user of a successful invocation of the phage comparative genomics workflow and beneath that it will show you the Workflow Invocation State as the jons are scheduled then run. From here, wait until all of the steps have completed and their datasets have turned green.
 
 ![](../../images/phage-comparative-genomics-screenshots/6_successful_invocation.png)
 
