@@ -66,18 +66,18 @@ The current comparative genomics workflow is set up to perform TaxID-restricted 
 
 ![](../../images/phage-comparative-genomics-screenshots/1_go_to_workflows.png)
 
-> * Find the most recent version of the “Phage comparative genomics (v#) workflow,” where # indicates the most recent version of this workflow. Click on the drop-down menu for that workflow and select “Import.” After this, a green box containing a message will appear to inform the user of a successful import.
+> * Find the most recent version of the “Phage comparative genomics (v#) workflow,” where # indicates the most recent version of this workflow. Click on the drop-down menu for that workflow and select “Import.” After this, a green box containing a message will appear to inform the user of a successful import. ALternatively, the workflow can be run directly from here, without importing, by clicking on "Run".
 
 ![](../../images/phage-comparative-genomics-screenshots/2_import_workflow.png)
 
-> * From there, one can click on “start using this workflow” within the message box to be brought to the page containing all of the user’s imported workflows. Find the Phage comparative genomics workflow, click the drop-down menu, and select “Run.”
+> * Once imported, one can click on “start using this workflow” within the message box to be brought to the page containing all of the user’s imported workflows. Find the Phage comparative genomics workflow, click the drop-down menu, and select “Run.”
 
 > * The parameters for the workflow will then load in the center Galaxy panel. The inputs that the user needs to adjust are as follows:
 >    > * Step 1. The **Input phage DNA sequence (FASTA)** will be the FASTA dataset (raw nucleotide for genome)
 >    > * Step 2. The **Export protein-coding genes for comparison (Galaxy Version 19.1.0.0)** will be the GFF3 file
 
 > ### {% icon tip %} When Retrieving Data from Apollo into Galaxy
->When the **Retrieve Data** data tool is used to import data from Apollo into a Galaxy history, the resulting file is a combined GFF3 + FATSA which must be split into separate files before the Comparative Genomics workflow is run. Search for the **Split GFF3 + FASTA into sepatare parts** tool in the Tools pane, then run this tool on the combined file to generate the seprated files. When running the workflow, make sure that the input GFF3 is the split GFF3 and not the "Annotations and Sequence from Apollo" file.  
+>When the **Retrieve Data** tool is used to import data from Apollo into a Galaxy history, the resulting file is a combined GFF3 + FATSA which must be split into separate files before the Comparative Genomics workflow is run. Search for the **Split GFF3 + FASTA into separate parts** tool in the Tools pane, then run this tool on the combined file to generate the seprated files. When running the workflow, make sure that the input GFF3 and FASTA files are the split GFF3 and FASTA files and not the "Annotations and Sequence from Apollo" file.  
 {: .tip}
 
 > ### {% icon tip %} Note that…
