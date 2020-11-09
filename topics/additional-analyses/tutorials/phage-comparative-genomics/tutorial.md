@@ -77,14 +77,14 @@ The current comparative genomics workflow is set up to perform TaxID-restricted 
 >    > * Step 2. The **Export protein-coding genes for comparison (Galaxy Version 19.1.0.0)** will be the GFF3 file
 
 > ### {% icon tip %} When Retrieving Data from Apollo into Galaxy
->When the **Retrieve Data** data tool is used to import data from Apollo into a Galaxy history, the resulting file is a combined GFF3 + FATSA which must be split into separate files before the COmparative Genomics workflow is run. Search for the **Split GFF3 + FASTA into sepatare parts** tool in the Tools pane, then run this tool on the combined file to generate the seprated files. When running the workflow, make sure that the input GFF3 is the split GFF3 and not the "Annotations and Sequence from Apollo" file.  
+>When the **Retrieve Data** data tool is used to import data from Apollo into a Galaxy history, the resulting file is a combined GFF3 + FATSA which must be split into separate files before the Comparative Genomics workflow is run. Search for the **Split GFF3 + FASTA into sepatare parts** tool in the Tools pane, then run this tool on the combined file to generate the seprated files. When running the workflow, make sure that the input GFF3 is the split GFF3 and not the "Annotations and Sequence from Apollo" file.  
 {: .tip}
 
 > ### {% icon tip %} Note that…
 > The dataset numbers will be different for each user. Workflow versions also change regularly. 
 {: .tip}
 
-> * Once the inputs have been selected, click “Run workflow” at the top of the page to execute the workflow. A message in a green box will appear to inform the user of a successful invocation of the phage comparative genomics workflow and beneath that it will show you the Workflow Invocation State as the jons are scheduled then run. From here, wait until all of the steps have completed and their datasets have turned green.
+> * Once the inputs have been selected, click “Run workflow” at the top of the page to execute the workflow. A message in a green box will appear to inform the user of a successful invocation of the phage comparative genomics workflow and beneath that it will show you the Workflow Invocation State as the jobs are scheduled then run. From here, wait until all of the steps have completed and their datasets have turned green.
 
 ![](../../images/phage-comparative-genomics-screenshots/6_successful_invocation.png)
 
