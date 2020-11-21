@@ -46,3 +46,6 @@ In cases where a genome is opened in the middle of a gene, and the interrupted g
 
 ## Interrupted Genes due to SNPs, InDels, or Sequencing Errors
 Finally, the intron detection tool can be helpful for finding genes disrupted due to mutations, alternative gene arrangements, or sequencing errors (such as those produced by nanopore sequencing). Users will need to perform additional analysis to determine the true nature of these types of gene interruptions.  
+
+## Protein splits and fusions
+Occasionally, proteins that interact or perform related functions can be found as separate proteins in some organisms and as fusions into a single polypeptide (encoded by a single ORF) in others.  In such cases, the intron detection tool can identify two proteins as being potentially split if a fused form of these proteins exists in the BLASTp search results.  It is important to evaluate the results of this tool carefully to determine if an identified split protein is truly disrupted by a mechanism described above (intron, programmed frameshift, or sequencing error) or is actually biologically functioning as two separate proteins.
