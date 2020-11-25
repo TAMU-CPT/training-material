@@ -12,9 +12,9 @@ tutorial_name: apollo-faq
 > {: .solution}
 {: .question}
 
-> ### {% icon question %} My gene/mRNA names/edits won’t save!
+> ### {% icon question %} My gene/mRNA names edits won’t save!
 >    > ### {% icon solution %} Solution
->    > * The gene/mRAN name has a special character; *remove it.*
+>    > * The gene/mRNA name has a special character; *remove it.*
 >    > * You haven’t refreshed the page or logged in recently; *refresh the page.*
 > {: .solution}
 {: .question}
