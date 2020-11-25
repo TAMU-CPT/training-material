@@ -52,11 +52,14 @@ To annotate a gene that has been called, right click on the gene in the pale yel
 
 ![](../../images/annotation-in-apollo-screenshots/0_right_click.png)
 
-A screen will appear with various fields that can be filled in with information about the gene.
+A screen will appear to the right of the main view with various fields that can be filled in with information about the gene. 
 
-![](../../images/annotation-in-apollo-screenshots/1_gene_information.png)
+![](../../images/annotation-in-apollo-screenshots/Apollo_mRNA_Gene_Sync.png)
 
-Reference the list above to see how the CPT would prefer to have genes annotated. *Note that in the current Apollo verion, when you select the gene under "Name" in the annotation screen shown above, the gene name is NOT directly editable.  Instead, only the mRNA name is editable and the annotated mRNA name is what is displayed in the annotation track. We are working on syncing the gene and mRNA name for better user experience.*  
+Reference the list above to see how the CPT would prefer to have genes annotated. **Note that in the current Apollo verion, when you select the gene under "Name" in the annotation screen shown above, the gene name is NOT directly editable.  Instead, only the mRNA name is editable and the annotated mRNA name is what is displayed in the annotation track.**  
+
+Click on the mRNA and in the mRNA editing window (bottom portion of the annotation screen), enter your chosen name for the mRNA in the “Name” box (red arrow), and hit ‘enter’. You may see a Save password dialog box, if you do just hit ’No thanks’ or close the box. You should then see that the name of your mRNA in the main viewing pane has been updated. Click on “Sync name with gene” (blue arrow) in the annotation pane to make sure both the gene and the mRNA are identically named.  You need to refresh the annotation tab (by clicking on a different tab in the annotation pane) in order to see the gene name syncing with the mRNA.  If you experience any problems with the names not syncing in the main view or the annotation pane, then refresh the page. **We are working on improving syncing the gene and mRNA name for better user experience**.  If you failed to sync all mRNA with gene names or choose not to sync while you annotate in Apollo, we do have a [Promote Qualifier tool](https://cpt.tamu.edu/galaxy-pub/root?tool_id=edu.tamu.cpt.gff3.promote_qualifiers) (TAMU user [tool link](https://cpt.tamu.edu/galaxy/root?tool_id=edu.tamu.cpt.gff3.promote_qualifiers)) to sync all mRNA names with gene names in the Gff3 file retreived from Apollo record for downstream analysis.  
+
 
 > ### {% icon comment %} Naming Guidelines
 > It is imperative to follow suit with the [UniProt](https://www.uniprot.org/docs/International_Protein_Nomenclature_Guidelines.pdf) and [NCBI](https://www.ncbi.nlm.nih.gov/genome/doc/internatprot_nomenguide/) international naming conventions. It allows for standardization and consistency in naming proteins, subsequently aiding data retrieval and improving communication. Follow the convention for capitalization and hypothetical protein naming.
