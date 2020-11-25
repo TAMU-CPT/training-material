@@ -8,7 +8,7 @@ tutorial_name: apollo-faq
 
 > ### {% icon question %} My gene name is not editable in the annotation panel!
 >    > ### {% icon solution %} Solution
->    > * In the current Apollo verion, when open the annotation panel by right click on a gene, the gene name is NOT directly editable. Instead, only the mRNA name is editable and the annotated mRNA name is what is displayed in the annotation track. You need to make edit to mRNA and sync the gene and mRNA name.  Please read Annotation In Apollo tutorial for more information.  
+>    > * In the current Apollo verion, when open the annotation panel by right click on a gene, the gene name is NOT directly editable. Instead, only the mRNA name is editable and the annotated mRNA name is what is displayed in the annotation track. You need to make edit to mRNA and sync the gene and mRNA name.  Please read [Annotation In Apollo]({{ site.baseurl }}//topics/phage-annotation-pipeline/tutorials/annotation-in-apollo/tutorial.html) for more information.  
 > {: .solution}
 {: .question}
 
