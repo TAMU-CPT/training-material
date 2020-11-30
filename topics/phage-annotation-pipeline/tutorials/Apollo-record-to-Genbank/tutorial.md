@@ -35,21 +35,23 @@ Finalize the genome annotation in Apollo. Check the following before proceeding 
 
 # Step 2: Retrieve Apollo Annotation Record into Galaxy
 
-> * In Galaxy, run the [Retrieve Data](https://cpt.tamu.edu/galaxy-pub/root?tool_id=export) tool (use this [tool link](https://cpt.tamu.edu/galaxy/root?tool_id=export) if you are CPT internal user).
+> * In Galaxy, run the [Retrieve Data](https://cpt.tamu.edu/galaxy-pub/root?tool_id=export) tool (use this [tool link](https://cpt.tamu.edu/galaxy/root?tool_id=export) if you are CPT internal user).  This gives you two files, “Annotation and Sequence from Apollo” and “Metadata from Apollo”.  The “Annotation and Sequence from Apollo” is a .gff3 file that combines the GFF3 annotation and the genome FASTA sequence. You will need to run this [Split tool](https://cpt.tamu.edu/galaxy-pub/root?tool_id=edu.tamu.cpt2.gff3.splitGff) (use this tool [link](https://cpt.tamu.edu/galaxy/root?tool_id=edu.tamu.cpt2.gff3.splitGff) if you are TAMU user) to separate the “Annotation and Sequence from Apollo” file into a separate GFF3 file (containing only the GFF3 annotation) and a FASTA file (containing only the genome sequence).  
 > * If the genome needs to be re-opened, then do that now following this [tutorial](https://cpt.tamu.edu/training-material/topics/additional-analyses/tutorials/reopening-apollo-with-annotations/tutorial.html). If not, proceed with the gff3 to Genbank step below.
 >* Run the [Promote Qualifers tool](https://cpt.tamu.edu/galaxy-pub/root?tool_id=edu.tamu.cpt.gff3.promote_qualifiers) ([link](https://cpt.tamu.edu/galaxy/root?tool_id=edu.tamu.cpt.gff3.promote_qualifiers) for TAMU users) to make sure all gene names are in sync with mRNA names (see [Annotation in Apollo](https://cpt.tamu.edu/training-material/topics/phage-annotation-pipeline/tutorials/annotation-in-apollo/tutorial.html) for why this step may be needed) 
 > * Run the [GFF3 to GenBank](https://cpt.tamu.edu/galaxy-pub/root?tool_id=edu.tamu.cpt.gff.gff2gb) conversion tool (use this [tool link](https://cpt.tamu.edu/galaxy/root?tool_id=edu.tamu.cpt.gff.gff2gb) if you are CPT internal user).
+
+> ### {% icon comment %} Note:
+>  At this step, you can use a third party Genbank file editing software, such as [Artemis](http://sanger-pathogens.github.io/Artemis/) to verify, edit and fix problematic features not fully supported by Apollo.  After editing, you can generate a 5 column table (sequin table format) required for Genbank submission by going to File-->Save an entry as -->Sequin table format.  You may also save a DNA sequence FASTA file by going to File-->Write-->All bases-->FASTA format. These are two files required for NCBI submission.  Alternatively, you can skip using Artemis and directly do edits in the 5 column table generated in Galaxy.  
+{: .tip}
+
 > * Run the [GenBank to 5 Column Table](https://cpt.tamu.edu/galaxy-pub/root?tool_id=edu.tamu.cpt.genbank.GBKtoFiveCol) tool (use this [tool link](https://cpt.tamu.edu/galaxy/root?tool_id=edu.tamu.cpt.genbank.GBKtoFiveCol) if you are CPT internal user) to generate the 5 column table text file, which will be verified and edited before depositing to GenBank.
 
 
 # Step 3: Fix Special Features not Supported by Apollo
-In the 5 column table generated from **Step 2**, examine if locus tags assigned to all gene features are correct and in order.  Also examine the genome features that are not reliably supported by Apollo, and fix manually in the 5-column table if necessary.  This includes making sure frameshift proteins are fused properly at the correct position, special features such as terminal repeats or cos site sequences are added, and special qualifiers required by NCBI are added.  The [NCBI rules](https://www.ncbi.nlm.nih.gov/genbank/genomesubmit_annotation/) are the ultimate guidelines on the format that needs to be used in the polished version to deposit. It includes the current standard for features like introns, inteins, etc. Read it to make sure you are still up to date.
+As stated above, to fix special features not supported by Apollo, You can use [Artemis](http://sanger-pathogens.github.io/Artemis/) to verify, edit the genbank file generated in Step 2.  Refer to [the Artemis manual]( https://sanger-pathogens.github.io/Artemis/Artemis/artemis-manual.html) on how to use Artemis.  Open your Genbank file in Artemis to make sure the special features listed below are correctly annotated if necessary. Basically, you need to examine if locus tags assigned to all gene features are correct and in order. 
+If applicable, frameshift products or intron containing genes need to be fused properly at the correct position. Special features such as terminal repeat or cos end sequence (if there is any) needs to be added by creating new feature with appropriate qualifier. The [NCBI rules](https://www.ncbi.nlm.nih.gov/genbank/genomesubmit_annotation/) are the ultimate guidelines on the format that needs to be used in the polished version to deposit. It includes the current standard for features like introns, inteins, etc. Read it to make sure you are still up to date.
 
-> ### {% icon comment %} Note:
->  An alternative to fixing the 5 column table is to use a third party Genbank file editing software, such as [Artemis](http://sanger-pathogens.github.io/Artemis/) to edit and fix problematic features.  Open your Genbank file in Artemis to proceed with the editing and generating a 5 column table (sequin table format) required for Genbank submission.  This guide does not cover how to edit a Genbank file in Artemis.  
-{: .tip}
 
-Typically we verify the following:
 >    > #### I. Locus Tags
 >    > 
 >    >Verify if the locus tags are assigned properly for the tricky features per [NCBI locus tag rules](https://www.ncbi.nlm.nih.gov/genomes/locustag/Proposal.pdf).  If not correct, you need to run the genbank file through [Renumbering](https://cpt.tamu.edu/galaxy-pub/root?tool_id=edu.tamu.cpt.genbank.RelabelTags) tool (use this [tool link](https://cpt.tamu.edu/galaxy/root?tool_id=edu.tamu.cpt.genbank.RelabelTags) if you are CPT internal user) and re-generatet 5 column table to verify again.
@@ -99,6 +101,8 @@ Typically we verify the following:
 >    > If applicable, add "misc_feature" for cos end sequence with the defined coordinates to indicate the cos end sequence . See below for an example.
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/5-misc-feature.PNG)
 >    >
+
+If you made these edits in genbank file in Artemis, you can generate a 5 column table (sequin table format) required for Genbank submission by going to File-->Save an entry as -->Sequin table format.  You may also save a DNA sequence FASTA file by going to File-->Write-->All bases-->FASTA format. Altanatively, you can use the DNA sequence file you retrieved from Apollo ealier. 
 
 # Step 4: Final Formatting for GenBank Deposit
 For Genbank submission through [BankIt](https://www.ncbi.nlm.nih.gov/WebSub/?tool=genbank), you need to provide a 5 column table text file, a DNA sequence FASTA file, and fill in genome source information as required. 
