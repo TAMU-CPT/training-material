@@ -156,7 +156,7 @@ material:
       - jrr-cpt
       - ltmaddox
   -
-    title: "Finding Interrupted Genes Using the Intron Detection Tool"
+    title: "Finding Interrupted Genes Using the Interrupted Gene Detection Tool"
     type: "tutorial"
     name: "finding-interrupted-genes"
     zenodo_link: ""
