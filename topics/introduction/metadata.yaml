@@ -55,6 +55,19 @@ material:
       - jrr-cpt
       - jasonjgill
   -
+    title: "Using and Editing Workflows in Galaxy"
+    type: "tutorial"
+    name: "How-to-use-and-edit-workflows-in-Galaxy"
+    hands_on: yes
+    tags:
+    questions:
+    objectives:
+    time_estimation:
+    key_points:
+    contributors:
+      - benburrowes 
+      - moffmade
+  -
     title: "Getting Started With Apollo"
     type: "tutorial"
     name: "getting-started-with-apollo"
