@@ -76,8 +76,9 @@ On the top bar of the CPT Galaxy front page, click “Shared Data” (blue arrow
 
 You will now see the Published Workflows page. Scroll down to the workflow you wish to use and click on the down arrowhead symbol ˅ (blue arrow in figure 2) to show the drop-down menu (red arrow), with options to run, import or save the workflow as a file.
 
-Figure 2. Published workflows page
-![](../../images/How-to-use-and-edit-workflows-in-Galaxy/2_published_workflows_page.png)
+|Figure 2. Published workflows page|
+|:--:|
+|![](../../images/How-to-use-and-edit-workflows-in-Galaxy/2_published_workflows_page.png)|
 
 Published Workflows can either be directly run from this page by clicking on Run in the dropdown menu, or you may Import a local copy into your Galaxy account. Import a copy if you are planning to make any changes to the workflow, as you cannot save any changes to the Published workflow parameters. Published workflows are liable to be changed as we update or add new tools, so it may be prudent to import a copy if you need to ensure reproducable results. 
 
@@ -85,8 +86,9 @@ When you are ready to run the workflow, you can invoke it by either by selecting
 
 Once the workflow has loaded it will attempt to automatically populate the input files from your history. As shown in figure 3, the workflow has automatically populated the inputs for Genome Sequence, Annotation Set and Apollo Organism JSON File. Make sure these are correct. If an input box shows the message “No XXX dataset available” (“XXX” being the file type that is missing) then Galaxy cannot find a suitable file type in the history. The input dataset can be entered manually, however if the dataset is not in your history then the workflow cannot run. If this is the case, upload or generate the proper dataset for input, and re-invoke the workflow.
 
-Figure 3. Functional Workflow displayed in Galaxy. The blue box shows the Input Datasets that were autopopulated by Galaxy. 
-![](../../images/How-to-use-and-edit-workflows-in-Galaxy/3_functional_workflow_displayed_in_galaxy.png)
+|Figure 3. Functional Workflow displayed in Galaxy. The blue box shows the Input Datasets that were autopopulated by Galaxy.|
+|:--:|
+|![](../../images/How-to-use-and-edit-workflows-in-Galaxy/3_functional_workflow_displayed_in_galaxy.png)|
 
 The user also has the option to send the workflow results to a new history (blue arrow, figure 3), this is useful if the user wishes to rerun the same or a similar workflow on the same input data without piling up large quantities of data in the same history, which can make histories hard to work with. 
 
@@ -96,8 +98,9 @@ Make sure you have checked the entire workflow. For example, some workflows will
 
 As the workflow runs, each tool will change from gray (waiting to run) to yellow (running), then to either green (tool ran successfully) or red if there is an error. If a tool fails, then all downstream tools dependent on that output will pause. Click on the failed tool to see what went wrong. If you are able to do so, fix the problem and rerun the tool by clicking on the rerun icon (red arrow, figure 4). 
 
-Figure 4. Error message of failed tool.
-![](../../images/How-to-use-and-edit-workflows-in-Galaxy/4_error_message_of_failed_tool.png)
+|Figure 4. Error message of failed tool.|
+|:--:|
+|![](../../images/How-to-use-and-edit-workflows-in-Galaxy/4_error_message_of_failed_tool.png)|
 
 If there are downstream tools waiting for the output of the failed tool, you will be given the option to continue execution of the workflow once the tool has run successfully. Check the input parameters and other options for the failed tool, then click “Execute”. If you forget to resume dependent tools before re-executing the job, you can resume paused jobs through the History menu. If the tool continues to fail, then send a bug report and our adminstration staff will investigate and reach out to you.
 
@@ -111,19 +114,21 @@ When editing workflows, it is essential that the user understands the input requ
 
 On the top bar of the CPT Galaxy interface, click “Workflow” (purple arrow in figure 1). The center pane will populate with your stored workflows (figure 5)
 
-Figure 5. Galaxy webpage showing the "Your Workflows" pane.
-> ![](../../images/How-to-use-and-edit-workflows-in-Galaxy/5_galaxy_webpage_your_workflows.png)
-{: .comment}
+|Figure 5. Galaxy webpage showing the "Your Workflows" pane.|
+|:--:|
+|![](../../images/How-to-use-and-edit-workflows-in-Galaxy/5_galaxy_webpage_your_workflows.png)|
 
 Click on the down arrowhead next to the workflow you want to edit, then select “Edit” from the dropdown menu as shown in figure 5. This will load the workflow editor (figure 6). The Tools pane on the left shows all tools that can be used in workflows as well as special "input" options to provide initial datasets to the workflow at the start of invocation. The Details pane on the right will appear when selecting a tool in the Editor and shows the toolform as if you were running the tool manually, including help text. Any usual parameters can be set here, or be selected to be set at runtime. The bottom of the  Details pane also has output configuration options that allow you to rename, relabel, or tag the output datasets from the tool. This can be useful to avoid having many unhelpful "Tool on Dataset 2, 4, and 8" dataset names in the history after running your workflow. 
 
-Figure 6. Workflow Editor (center pane).
-> ![](../../images/How-to-use-and-edit-workflows-in-Galaxy/6_workflow_editor.png)
+|Figure 6. Workflow Editor (center pane).|
+|:--:|
+|![](../../images/How-to-use-and-edit-workflows-in-Galaxy/6_workflow_editor.png)|
 
 Each tool is represented by a box with a gray top section with the tool name (figure 7). Below the tool name, in the white box below. Input requirements for the tool are shown at the top of the box with connections on the left, and outputs at the bottom with connections on the right. Note than not all tools have inputs (red arrow, figure 7). Each output has a small asterisk next to it, between the name and the connection handle. If this asterisk is unselected (grey), that output dataset will be "Hidden" in the history after job execution. Otherwise, if it is selected (green) then the dataset will be visible. This can be helpful to only display the final results to reduce the cluttering the Galaxy history with a lot of intermediate steps. As a reminder, and hidden datasets can be freely unhidden if needed.
 
-Figure 7. Tools chained together in the Workflow Editor.
-> ![](../../images/How-to-use-and-edit-workflows-in-Galaxy/7_tools_chained_workflow_editor.png)
+|Figure 7. Tools chained together in the Workflow Editor.|
+|:--:|
+|![](../../images/How-to-use-and-edit-workflows-in-Galaxy/7_tools_chained_workflow_editor.png)|
 
 Simply click on the output arrowhead and the drag the connector (green arrow, figure 7) to the input of the next tool in the workflow. Connectors can be deleted by clicking on the input arrowhead. If you want to add a new tool, then just find the tool on the Tools pane and click on it, the tool will appear in the Workflow editor pane ready to be used. You can select "Auto-layout" from the cogwheel menu to automatically sort the tools based on what they connect to, or you can manually click and drag them around as you work to better keep track. 
 
