@@ -76,7 +76,7 @@ Figure 1. The CPT front page.
 You will now see the Published Workflows page. Scroll down to the workflow you wish to use and click on the down arrowhead symbol ˅ (blue arrow in figure 2) to show the drop-down menu (red arrow), with options to run, import or save the workflow as a file
 
 Figure 2. Published workflows page
-![](../../images/How-to-use-and-edit-workflows-in-Galaxy/2_published_workflows_page.PNG)
+![](../../images/How-to-use-and-edit-workflows-in-Galaxy/2_published_workflows_page.png)
 
 While the workflow can be run directly from this page (by clicking on “Run”), it is better to click on “Import” to make a copy of the workflow in your own Galaxy account. If you are going to make any changes to the workflow, then you MUST import it into your own account so that you don’t make changes to the original published workflow.
 
@@ -85,7 +85,7 @@ Once you have imported the workflow, click “Workflow” on the top bar (purple
 Once the workflow has loaded it will attempt to automatically populate the input files from your history. As shown in figure 3, the workflow has automatically populated the inputs for Genome Sequence, Annotation Set and Apollo Organism JSON File. Make sure these are correct. If an input box shows the message “No XXX dataset available” (“XXX” being the file type that is missing) then Galaxy cannot find a suitable file type in the history. The input dataset can be entered manually, however if the dataset is not in your history then the workflow cannot run.
 
 Figure 3. Functional Workflow displayed in Galaxy. The blue box shows the Input Datasets that were autopopulated by Galaxy. 
-![](../../images/How-to-use-and-edit-workflows-in-Galaxy/3_functional_workflow_displayed_in_galaxy.PNG)
+![](../../images/How-to-use-and-edit-workflows-in-Galaxy/3_functional_workflow_displayed_in_galaxy.png)
 
 The user also has the option to send the workflow results to a new history (blue arrow, figure 3), this is useful if the user wishes to rerun the same or a similar workflow on the same input data without piling up large quantities of data in the same history, which can make histories hard to work with. 
 
