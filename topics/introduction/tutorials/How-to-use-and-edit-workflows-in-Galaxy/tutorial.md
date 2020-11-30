@@ -1,6 +1,6 @@
 ---
 layout: tutorial_hands_on
-topic_name: phage-annotation-pipeline
+topic_name: introduction 
 tutorial_name: How-to-use-and-edit-workflows-in-Galaxy
 ---
 
