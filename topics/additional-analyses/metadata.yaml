@@ -173,7 +173,18 @@ material:
       - meiliucpt
       - jrr-cpt
       - ltmaddox
-
+  -
+    title: "How to Extract a SVG file from the X-vis Output in Galaxy"
+    type: "tutorial"
+    name: "how_to_extract_SVG_from_X-vis_in_galaxy"
+    hands_on: yes
+    tags:
+    questions:
+    objectives:
+    time_estimation: "1h/1d"
+    key_points:
+    contributors:
+      - benburrowes
 
 maintainers:
   - moffmade
