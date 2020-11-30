@@ -57,7 +57,7 @@ material:
   -
     title: "Using and Editing Workflows in Galaxy"
     type: "tutorial"
-    name: "use-and-edit-workflows"
+    name: "How-to-use-and-edit-workflows-in-Galaxy"
     hands_on: yes
     tags:
     questions:
