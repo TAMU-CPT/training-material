@@ -3,7 +3,7 @@ name: "additional-analyses"
 type: "use"
 title: "Additional Analyses"
 ranking: "2"
-summary: "This section of tutorials is currently under construction. Thank you for your patience."
+summary: "This section of tutorials covers additional analyses for specific or advanced annotation needs."
 
 requirements:
   -
