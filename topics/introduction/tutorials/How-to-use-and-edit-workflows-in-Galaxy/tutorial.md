@@ -1,7 +1,7 @@
 ---
 layout: tutorial_hands_on
 topic_name: introduction 
-tutorial_name: How-to-use-and-edit-workflows-in-Galaxy
+tutorial_name: use-and-edit-workflows 
 ---
 
 # How to use and Edit Workflows in Galaxy
