@@ -70,15 +70,16 @@ Make sure that the history you want to work on is displayed as your “Current H
 
 On the top bar of the CPT Galaxy front page, click “Shared Data” (blue arrow) and from the dropdown menu click “Workflows” (green arrow). 
 
-Figure 1. The CPT front page.
-![](../../images/How-to-use-and-edit-workflows-in-Galaxy/1_the_cpt_front_page.png)
+|Figure 1. The CPT front page.|
+|:--:|
+|![](../../images/How-to-use-and-edit-workflows-in-Galaxy/1_the_cpt_front_page.png)|
 
-You will now see the Published Workflows page. Scroll down to the workflow you wish to use and click on the down arrowhead symbol ˅ (blue arrow in figure 2) to show the drop-down menu (red arrow), with options to run, import or save the workflow as a file
+You will now see the Published Workflows page. Scroll down to the workflow you wish to use and click on the down arrowhead symbol ˅ (blue arrow in figure 2) to show the drop-down menu (red arrow), with options to run, import or save the workflow as a file.
 
 Figure 2. Published workflows page
 ![](../../images/How-to-use-and-edit-workflows-in-Galaxy/2_published_workflows_page.png)
 
-Published Workflows can either be directly run from this page by clicking on Run in the dropdown menu, or you may Import a local copy into your Galaxy account. If you are going to make any changes to the workflow, as you cannot save any changes to the Published workflow parameters. Published workflows are liable to be changed as we update or add new tools, so it may be prudent to import a copy if you need to ensure reproducable results. 
+Published Workflows can either be directly run from this page by clicking on Run in the dropdown menu, or you may Import a local copy into your Galaxy account. Import a copy if you are planning to make any changes to the workflow, as you cannot save any changes to the Published workflow parameters. Published workflows are liable to be changed as we update or add new tools, so it may be prudent to import a copy if you need to ensure reproducable results. 
 
 When you are ready to run the workflow, you can invoke it by either by selecting Run from the Published Workflows, or Run from your personal Saved Workflows (click “Workflow” on the top bar - purple arrow in figure 1). Once invoked, the center pane will go blank as the workflow is prepared for use and load the workflow report. This may take a few minutes depending on the number and complexity of the tools – be patient, no amount of clicking on anything will make it load any faster.
 
