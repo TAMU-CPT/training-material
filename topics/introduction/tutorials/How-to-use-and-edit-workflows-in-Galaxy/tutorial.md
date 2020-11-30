@@ -86,9 +86,10 @@ When you are ready to run the workflow, you can invoke it by either by selecting
 
 Once the workflow has loaded it will attempt to automatically populate the input files from your history. As shown in figure 3, the workflow has automatically populated the inputs for Genome Sequence, Annotation Set and Apollo Organism JSON File. Make sure these are correct. If an input box shows the message “No XXX dataset available” (“XXX” being the file type that is missing) then Galaxy cannot find a suitable file type in the history. The input dataset can be entered manually, however if the dataset is not in your history then the workflow cannot run. If this is the case, upload or generate the proper dataset for input, and re-invoke the workflow.
 
-|Figure 3. Functional Workflow displayed in Galaxy. The blue box shows the Input Datasets that were autopopulated by Galaxy.|
+|Figure 3. Functional Workflow displayed in Galaxy. |
 |:--:|
 |![](../../images/How-to-use-and-edit-workflows-in-Galaxy/3_functional_workflow_displayed_in_galaxy.png)|
+|The blue box shows the Input Datasets that were autopopulated by Galaxy.|
 
 The user also has the option to send the workflow results to a new history (blue arrow, figure 3), this is useful if the user wishes to rerun the same or a similar workflow on the same input data without piling up large quantities of data in the same history, which can make histories hard to work with. 
 
@@ -120,7 +121,7 @@ On the top bar of the CPT Galaxy interface, click “Workflow” (purple arrow i
 
 Click on the down arrowhead next to the workflow you want to edit, then select “Edit” from the dropdown menu as shown in figure 5. This will load the workflow editor (figure 6). The Tools pane on the left shows all tools that can be used in workflows as well as special "input" options to provide initial datasets to the workflow at the start of invocation. The Details pane on the right will appear when selecting a tool in the Editor and shows the toolform as if you were running the tool manually, including help text. Any usual parameters can be set here, or be selected to be set at runtime. The bottom of the  Details pane also has output configuration options that allow you to rename, relabel, or tag the output datasets from the tool. This can be useful to avoid having many unhelpful "Tool on Dataset 2, 4, and 8" dataset names in the history after running your workflow. 
 
-|Figure 6. Workflow Editor (center pane).|
+|Figure 6. Workflow Editor.|
 |:--:|
 |![](../../images/How-to-use-and-edit-workflows-in-Galaxy/6_workflow_editor.png)|
 
