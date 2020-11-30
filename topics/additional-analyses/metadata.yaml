@@ -176,7 +176,7 @@ material:
   -
     title: "How to Extract a SVG file from the X-vis Output in Galaxy"
     type: "tutorial"
-    name: "how_to_extract_SVG_from_X-vis_in_galaxy"
+    name: "How_to_extract_SVG_from_X-Vis_in_Galaxy"
     hands_on: yes
     tags:
     questions:
