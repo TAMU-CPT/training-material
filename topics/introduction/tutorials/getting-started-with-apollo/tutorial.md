@@ -8,6 +8,8 @@ tutorial_name: getting-started-with-apollo
 >
 > In this tutorial, you will find:
 >
+> * First-time users
+>    > * Generating an account with CPT Apollo
 > * Background Information
 >    > * History of Genome Browsers
 >    >    > 1. GBrowse

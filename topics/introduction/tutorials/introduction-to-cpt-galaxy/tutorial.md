@@ -7,17 +7,19 @@ tutorial_name: introduction-to-cpt-galaxy
 > ### Agenda
 >
 > In this tutorial, the following Galaxy characteristics will be reviewed:
->
-> 1. Tools
+> 
+> 1. First-time users
+>    > * Registering an account in Galaxy and Apollo
+> 2. Tools
 >    > * Uploading Data
 >    > * Choosing and Executing a Tool
-> 2. Histories
+> 3. Histories
 >    > * The Current History
 >    > * History Information
 >    > * Datasets
 >    > * Managing Datasets Individually
 >    > * Switching Histories
-> 3. Workflows
+> 4. Workflows
 >    > * Importing a Workflow
 >    > * Running a Workflow
 >
