@@ -56,11 +56,8 @@ Once you have an account you can access the training materials available through
 >
 > [**Functional Annotation Workflow**](https://cpt.tamu.edu/training-material/topics/introduction/tutorials/functional-annotation-workflow/tutorial.html).
 
-Other training material can be found at the Galaxy Project GutHub site:
+Other training material can be found at the Galaxy Project GutHub site [here](https://galaxyproject.github.io/training-material/topics/introduction/tutorials/galaxy-intro-101-everyone/tutorial.html#convert-your-analysis-history-into-a-workflow) and [here](https://galaxyproject.github.io/training-material/topics/introduction/tutorials/galaxy-intro-101/tutorial.html#galaxy-management).
 
-[**https://galaxyproject.github.io/training-material/topics/introduction/tutorials/galaxy-intro-101-everyone/tutorial.html#convert-your-analysis-history-into-a-workflow**](https://galaxyproject.github.io/training-material/topics/introduction/tutorials/galaxy-intro-101-everyone/tutorial.html#convert-your-analysis-history-into-a-workflow)
-
-[**https://galaxyproject.github.io/training-material/topics/introduction/tutorials/galaxy-intro-101/tutorial.html#galaxy-management**](https://galaxyproject.github.io/training-material/topics/introduction/tutorials/galaxy-intro-101/tutorial.html#galaxy-management)
 
 # Using Workflows
 
