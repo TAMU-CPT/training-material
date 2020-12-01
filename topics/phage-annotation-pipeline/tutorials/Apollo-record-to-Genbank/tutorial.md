@@ -112,7 +112,10 @@ If applicable, frameshift products or intron containing genes need to be fused p
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/5-misc-feature.PNG)
 >    >
 
-If you made the above edits in genbank file in Artemis, you can generate a 5 column table (sequin table format) required for Genbank submission by going to File-->Save an entry as -->Sequin table format.  You may also save a DNA sequence FASTA file by going to File-->Write-->All bases-->FASTA format. Alternatively, you can use the DNA sequence file you retrieved from Apollo ealier. 
+> ### {% icon comment %} Note:
+>  If you made the above edits in genbank file in Artemis, you can generate a 5 column table (sequin table format) required for Genbank submission by going to File-->Save an entry as -->Sequin table format.  You may also save a DNA sequence FASTA file by going to File-->Write-->All bases-->FASTA format. Alternatively, you can use the DNA sequence file you retrieved from Apollo ealier. 
+{: .tip}
+ 
 
 # Step 4: Final Formatting for GenBank Deposit
 For Genbank submission through [BankIt](https://www.ncbi.nlm.nih.gov/WebSub/?tool=genbank), you need to provide a 5 column table text file, a DNA sequence FASTA file, and fill in genome source information as required. 
