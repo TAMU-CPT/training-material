@@ -103,7 +103,8 @@ If applicable, frameshift products or intron containing genes need to be fused p
 >    > #### V. Terminal Repeats
 >    >
 >    > If applicable, add "repeat_region" for terminal repeat with the defined coordinates. The CPT convention is to put the TR at the 5’ end, not repeating the sequence at the 3’ end of the genome.  Add notes such as "direct terminal repeat predicted by PhageTerm", and "right end of genome sequence not duplicated in this record" to indicate that the bases are not repeated in the genome deposited, but that that sequence (and its genes) are present in the viral genome.  See below for terminal repeat examples viewed in Artemis and in 5 column table.
->    > ![](../../images/Apollo-record-to-Genbank-screenshots/TR_Artemis.PNG)  
+>    > ![](../../images/Apollo-record-to-Genbank-screenshots/TR_Artemis.PNG)&nbsp  
+
 >    >
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/TRagain.PNG)
 >    >
@@ -111,7 +112,8 @@ If applicable, frameshift products or intron containing genes need to be fused p
 >    >
 >    > If applicable, add "misc_feature" for cos end sequence with the defined coordinates to indicate the cos end sequence . See below for examples viewed in Artemis and in 5 column table.
 
->    > ![](../../images/Apollo-record-to-Genbank-screenshots/Cos_Artemis.PNG)
+>    > ![](../../images/Apollo-record-to-Genbank-screenshots/Cos_Artemis.PNG)&nbsp  
+
 >    >
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/5-misc-feature.PNG)
 >    >
