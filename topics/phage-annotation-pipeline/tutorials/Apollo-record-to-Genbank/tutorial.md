@@ -70,11 +70,11 @@ If applicable, frameshift products or intron containing genes need to be fused p
 >    >
 >    > #### II. Intron-containing Genes
 >    >
->    > Verify the base locations of the intron-containing genes are correct.  Gene feature span should be a single span covering all exons and introns.  The actual CDS feature should be annotated with sets of nucleotide spans showing how the exons are joined to create the correct product. Informative notes such as “Intron splice site predicted by Blast homology to XXXXX” or “intron contains VSR homing endonuclease” can be added.  When exon boundaries can not be identified, only the gene span covering all exons and introns is reported. See [the interrupted genes tutorial](https://cpt.tamu.edu/training-material/topics/additional-analyses/tutorials/finding-interrupted-genes/tutorial.html) for more info. See below screenshots for the example intron containing gene, how two exons are jointed together, and the fused CDS qualifier viewed in the qualifier editing window in Artemis.  How they appear in 5 column table is also shown.  
+>    > Verify the base locations of the intron-containing genes are correct.  Gene feature span should be a single span covering all exons and introns.  The actual CDS feature should be annotated with sets of nucleotide spans showing how the exons are joined to create the correct product. Informative notes such as “Intron splice site predicted by Blast homology to XXXXX” or “intron contains VSR homing endonuclease” can be added.  When exon boundaries can not be identified, only the gene span covering all exons and introns is reported. See [the interrupted genes tutorial](https://cpt.tamu.edu/training-material/topics/additional-analyses/tutorials/finding-interrupted-genes/tutorial.html) for more info. See below screenshots for the example intron containing gene, how two exons are jointed together, and the fused CDS qualifier viewed in the qualifier editing window in Artemis.  
 
->    > ![](../../images/Apollo-record-to-Genbank-screenshots/Intron_Artemis.PNG)&nbsp    
-
+>    > ![](../../images/Apollo-record-to-Genbank-screenshots/Intron_Artemis.PNG) 
 >    >
+>    > How they appear in 5 column table is shown below.    
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/Intronagain.PNG)
 >    >
 >    > #### III. Frameshifts
@@ -87,12 +87,13 @@ If applicable, frameshift products or intron containing genes need to be fused p
 >    >
 >    > > > * Each protein (non-frameshift version and frameshift version) should have their own RBS (which will have the exact same coordinates) and their own locus tags. 
 >    >
->    > See below for an example with properly formatted frameshifts viewed in Artemis and in 5 column table.
->    > ![](../../images/Apollo-record-to-Genbank-screenshots/Frameshift_Artemis.PNG)&nbsp   
-
+>    > See below for an example with properly formatted frameshifts viewed in Artemis.
+>    > ![](../../images/Apollo-record-to-Genbank-screenshots/Frameshift_Artemis.PNG)  
 >    >
-
->    > ![](../../images/Apollo-record-to-Genbank-screenshots/2-formatted-frameshifts.PNG)
+>    > This is what the it should look like in 5 column table:
+>    >
+>    > ![](../../images/Apollo-record-to-Genbank-screenshots/2-formatted-frameshifts.PNG)  
+>    >
 >    >
 >    > #### IV. Merged CDS on Minus Strand
 >    >
@@ -102,19 +103,21 @@ If applicable, frameshift products or intron containing genes need to be fused p
 >    >
 >    > #### V. Terminal Repeats
 >    >
->    > If applicable, add "repeat_region" for terminal repeat with the defined coordinates. The CPT convention is to put the TR at the 5’ end, not repeating the sequence at the 3’ end of the genome.  Add notes such as "direct terminal repeat predicted by PhageTerm", and "right end of genome sequence not duplicated in this record" to indicate that the bases are not repeated in the genome deposited, but that that sequence (and its genes) are present in the viral genome.  See below for terminal repeat examples viewed in Artemis and in 5 column table.
+>    > If applicable, add "repeat_region" for terminal repeat with the defined coordinates. The CPT convention is to put the TR at the 5’ end, not repeating the sequence at the 3’ end of the genome.  Add notes such as "direct terminal repeat predicted by PhageTerm", and "right end of genome sequence not duplicated in this record" to indicate that the bases are not repeated in the genome deposited, but that that sequence (and its genes) are present in the viral genome.  See below for terminal repeat example viewed in Artemis.
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/TR_Artemis.PNG)&nbsp  
-
+>    > 
+>    > The repeat region annotation should look like this in 5 column table:  
 >    >
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/TRagain.PNG)
 >    >
 >    > #### VI. Cos End Sequence
 >    >
->    > If applicable, add "misc_feature" for cos end sequence with the defined coordinates to indicate the cos end sequence . See below for examples viewed in Artemis and in 5 column table.
+>    > If applicable, add "misc_feature" for cos end sequence with the defined coordinates to indicate the cos end sequence . See below for an example viewed in Artemis.
 
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/Cos_Artemis.PNG)&nbsp  
 
->    >
+>    >  This is how it should look like in 5 column table:  
+
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/5-misc-feature.PNG)
 >    >
 
