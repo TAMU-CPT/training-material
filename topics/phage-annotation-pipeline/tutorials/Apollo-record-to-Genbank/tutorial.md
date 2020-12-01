@@ -41,10 +41,10 @@ Finalize the genome annotation in Apollo. Check the following before proceeding 
 > * Run the [GFF3 to GenBank](https://cpt.tamu.edu/galaxy-pub/root?tool_id=edu.tamu.cpt.gff.gff2gb) conversion tool (use this [tool link](https://cpt.tamu.edu/galaxy/root?tool_id=edu.tamu.cpt.gff.gff2gb) if you are CPT internal user).
 
 > ### {% icon comment %} Note:
->  At this step, you can use a third party Genbank file editing software, such as [Artemis](http://sanger-pathogens.github.io/Artemis/) to verify, edit and fix problematic features not fully supported by Apollo.  After editing, you can generate a 5 column table (sequin table format) required for Genbank submission by going to File-->Save an entry as -->Sequin table format.  You may also save a DNA sequence FASTA file by going to File-->Write-->All bases-->FASTA format. These are two files required for NCBI submission.  Alternatively, you can skip using Artemis and directly do edits in the 5 column table generated in Galaxy.  
+>  At this step, you can use a third party Genbank file editing software, such as [Artemis](http://sanger-pathogens.github.io/Artemis/) to verify, edit and fix problematic features not fully supported by Apollo.  After editing, you can generate a 5 column table (sequin table format) required for Genbank submission by going to File-->Save an entry as -->Sequin table format.  You may also save a DNA sequence FASTA file by going to File-->Write-->All bases-->FASTA format. These are two files required for NCBI submission.  Alternatively, you can skip using Artemis and directly do edits in the 5 column table generated in Galaxy using the [GenBank to 5 Column Table](https://cpt.tamu.edu/galaxy-pub/root?tool_id=edu.tamu.cpt.genbank.GBKtoFiveCol) tool (TAMU user [tool link](https://cpt.tamu.edu/galaxy/root?tool_id=edu.tamu.cpt.genbank.GBKtoFiveCol)).  
 {: .tip}
 
-> * Run the [GenBank to 5 Column Table](https://cpt.tamu.edu/galaxy-pub/root?tool_id=edu.tamu.cpt.genbank.GBKtoFiveCol) tool (use this [tool link](https://cpt.tamu.edu/galaxy/root?tool_id=edu.tamu.cpt.genbank.GBKtoFiveCol) if you are CPT internal user) to generate the 5 column table text file, which will be verified and edited before depositing to GenBank.
+> * Run the [GenBank to 5 Column Table](https://cpt.tamu.edu/galaxy-pub/root?tool_id=edu.tamu.cpt.genbank.GBKtoFiveCol) tool (use this [tool link](https://cpt.tamu.edu/galaxy/root?tool_id=edu.tamu.cpt.genbank.GBKtoFiveCol) if you are CPT internal user) to generate the 5 column table text file, which will be verified and edited before depositing.
 
 
 # Step 3: Fix Special Features not Supported by Apollo
@@ -70,7 +70,9 @@ If applicable, frameshift products or intron containing genes need to be fused p
 >    >
 >    > #### II. Intron-containing Genes
 >    >
->    > Verify the base locations of the intron-containing genes are correct.  Gene feature span should be a single span covering all exons and introns.  The actual CDS feature should be annotated with sets of nucleotide spans showing how the exons are joined to create the correct product. Informative notes such as “Intron splice site predicted by Blast homology to XXXXX” or “intron contains VSR homing endonuclease” can be added.  When exon boundaries can not be identified, only the gene span covering all exons and introns is reported. See [the interrupted genes tutorial](https://cpt.tamu.edu/training-material/topics/additional-analyses/tutorials/finding-interrupted-genes/tutorial.html) for more info. 
+>    > Verify the base locations of the intron-containing genes are correct.  Gene feature span should be a single span covering all exons and introns.  The actual CDS feature should be annotated with sets of nucleotide spans showing how the exons are joined to create the correct product. Informative notes such as “Intron splice site predicted by Blast homology to XXXXX” or “intron contains VSR homing endonuclease” can be added.  When exon boundaries can not be identified, only the gene span covering all exons and introns is reported. See [the interrupted genes tutorial](https://cpt.tamu.edu/training-material/topics/additional-analyses/tutorials/finding-interrupted-genes/tutorial.html) for more info. See below screenshots for the example intron containing gene and how two exons are jointed together in Artemis, as well as how they appear in 5 column table.  
+
+
 >    >
 >    > #### III. Frameshifts
 >    >
