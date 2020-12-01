@@ -73,6 +73,7 @@ If applicable, frameshift products or intron containing genes need to be fused p
 >    > Verify the base locations of the intron-containing genes are correct.  Gene feature span should be a single span covering all exons and introns.  The actual CDS feature should be annotated with sets of nucleotide spans showing how the exons are joined to create the correct product. Informative notes such as “Intron splice site predicted by Blast homology to XXXXX” or “intron contains VSR homing endonuclease” can be added.  When exon boundaries can not be identified, only the gene span covering all exons and introns is reported. See [the interrupted genes tutorial](https://cpt.tamu.edu/training-material/topics/additional-analyses/tutorials/finding-interrupted-genes/tutorial.html) for more info. See below screenshots for the example intron containing gene, how two exons are jointed together, and the fused CDS qualifier viewed in the qualifier editing window in Artemis.  How they appear in 5 column table is also shown.  
 
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/Intron_Artemis.PNG)
+>    >
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/Intron_five_column_table.PNG)
 >    >
 >    > #### III. Frameshifts
@@ -86,7 +87,8 @@ If applicable, frameshift products or intron containing genes need to be fused p
 >    > > > * Each protein (non-frameshift version and frameshift version) should have their own RBS (which will have the exact same coordinates) and their own locus tags. 
 >    >
 >    > See below for an example with properly formatted frameshifts viewed in Artemis and in 5 column table.
->    > ![](../../images/Apollo-record-to-Genbank-screenshots/Frameshift_artemis.PNG)
+>    > ![](../../images/Apollo-record-to-Genbank-screenshots/Frameshift_Artemis.PNG)
+
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/2-formatted-frameshifts.PNG)
 >    >
 >    > #### IV. Merged CDS on Minus Strand
@@ -104,7 +106,9 @@ If applicable, frameshift products or intron containing genes need to be fused p
 >    > #### VI. Cos End Sequence
 >    >
 >    > If applicable, add "misc_feature" for cos end sequence with the defined coordinates to indicate the cos end sequence . See below for examples viewed in Artemis and in 5 column table.
+
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/Cos_Artemis.PNG)
+>    >
 >    > ![](../../images/Apollo-record-to-Genbank-screenshots/5-misc-feature.PNG)
 >    >
 
