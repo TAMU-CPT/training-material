@@ -3,7 +3,7 @@ name: "additional-analyses"
 type: "use"
 title: "Additional Analyses"
 ranking: "2"
-summary: "This section of tutorials is currently under construction. Thank you for your patience."
+summary: "This section of tutorials covers additional analyses for specific or advanced annotation needs."
 
 requirements:
   -
@@ -156,7 +156,7 @@ material:
       - jrr-cpt
       - ltmaddox
   -
-    title: "Finding Interrupted Genes Using the Intron Detection Tool"
+    title: "Finding Interrupted Genes Using the Interrupted Gene Detection Tool"
     type: "tutorial"
     name: "finding-interrupted-genes"
     zenodo_link: ""
@@ -173,7 +173,18 @@ material:
       - meiliucpt
       - jrr-cpt
       - ltmaddox
-
+  -
+    title: "How to Extract a SVG file from the X-vis Output in Galaxy"
+    type: "tutorial"
+    name: "How_to_extract_SVG_from_X-Vis_in_Galaxy"
+    hands_on: yes
+    tags:
+    questions:
+    objectives:
+    time_estimation: "1h/1d"
+    key_points:
+    contributors:
+      - benburrowes
 
 maintainers:
   - moffmade

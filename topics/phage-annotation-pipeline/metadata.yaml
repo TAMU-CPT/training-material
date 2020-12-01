@@ -3,7 +3,7 @@ name: "phage-annotation-pipeline"
 type: "use"
 title: "Phage Annotation Pipeline in CPT Galaxy"
 ranking: "1"
-summary: "This section of tutorials is currently under construction. Thank you for your patience."
+summary: "This section of tutorials covers how to make annotations in Apollo using our workflows, as well as how to prepare an annotated Apollo record to deposit to Genbank."
 
 requirements:
   -
