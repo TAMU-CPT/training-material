@@ -1,0 +1,52 @@
+---
+name: "CPT FAQs"
+type: "use"
+title: "faq"
+summary: "General Galaxy and Apollo Frequently Asked Questions"
+requirements:
+  -
+    title: "Galaxy introduction"
+    type: "internal"
+    link: "/introduction/"
+
+material:
+  -
+    title: "Galaxy FAQ"
+    type: "tutorial"
+    name: "galaxy-faq"
+    zenodo_link: ""
+    galaxy_tour: no
+    hands_on: yes
+    slides: no
+    workflows: no
+    tags:
+    questions:
+    objectives:
+    time_estimation:
+    key_points:
+    contributors:
+      - ToniNittolo
+      - jrr-cpt
+  -
+    title: "Apollo FAQ"
+    type: "tutorial"
+    name: "apollo-faq"
+    zenodo_link: ""
+    galaxy_tour: no
+    hands_on: yes
+    slides: no
+    workflows: no
+    tags:
+    questions:
+    objectives:
+    time_estimation:
+    key_points:
+    contributors:
+      - ToniNittolo
+      - jrr-cpt
+      - meiliucpt
+
+maintainers:
+  - jasonjgill
+  - meiliucpt
+  - moffmade 
