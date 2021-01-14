@@ -1,7 +1,7 @@
 ---
-name: "CPT FAQs"
+name: "faq"
 type: "use"
-title: "faq"
+title: "FAQs"
 summary: "General Galaxy and Apollo Frequently Asked Questions"
 requirements:
   -
