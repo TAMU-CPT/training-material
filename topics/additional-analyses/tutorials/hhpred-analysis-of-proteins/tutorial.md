@@ -23,23 +23,29 @@ tutorial_name: hhpred-analysis-of-proteins
 
 ## Protein Structure Prediction
 
-There are a variety of tools that have been developed to predict protein structure using the amino acid sequence. Often these rely on protein alignments and usually threading through the published structures of similar proteins. These are incredibly computationally intensive tasks, and sometimes very wrong. For this reason, online servers typically limit the number of prediction jobs that can be run at a time, and we do not host them here in the CPT Galaxy. It is not very useful to run protein sequence through these tools if you have high confidence of its function based on high-confidence similarity to phage or bacterial proteins of known function, or with good domain hits and reasonable genomic context. Sometimes, the predicted structures, or similarity to structures of proteins with known function is helpful to making a novel phage protein functional prediction, but their use and interpretation should be done judiciously.
+There are a variety of tools developed to predict protein structure using the amino acid sequence. Often these rely on protein alignments and sometimes threading through the published structures of similar proteins. These are incredibly computationally intensive tasks. For this reason, online servers typically limit the number of prediction jobs that can be run at a time, and we do not host them here in the CPT Galaxy. It is not very useful to run protein sequence through these tools if you have high confidence of its function based on high-confidence similarity to phage or bacterial proteins of known function, or with good domain hits and reasonable genomic context. Sometimes, the predicted structures, or similarity to structures of proteins with known function, is helpful when making a novel phage protein functional prediction, but their use and interpretation should be done judiciously.
 
 ## Tools That Predict Protein Structure
 
  A few of the tools in the field are:
+> * [RaptorX](http://raptorx.uchicago.edu/)
 > * [Phyre2](http://www.sbg.bio.ic.ac.uk/phyre2/html/page.cgi?id=index)
 > * [I-TASSER](https://zhanglab.ccmb.med.umich.edu/I-TASSER/)
 > * [HHPred](https://toolkit.tuebingen.mpg.de/#/tools/hhpred) (discussed here)
 
-> ### {% icon tip %} A Relevant Read
+> ### {% icon tip %} Relevant Reading
+> Each of the above tools is described by papers linked on their sites. This training material discussed HHPred. There are two important papers that should be consulted for additional information on HHPred.
 > [A Completely Reimplemented MPI Bioinformatics Toolkit with a New HHpred Server at its Core. J Mol Biol. 2017 Dec 16.](https://www.ncbi.nlm.nih.gov/pubmed/29258817)
+> and a protocol for using HHPred here:
+> [Protein Sequence Analysis Using the MPI Bioinformatics Toolkit](https://pubmed.ncbi.nlm.nih.gov/33315308/)
 {: .comment}
 
 ## Caveats
 The outputs from these tools are *predictions* with varying levels of accuracy. At their very best, structure prediction serves to generate hypotheses that can be tested experimentally. Similar to cautions that apply to domain-swapping (as discussed with regard to InterPro domain hits), pay careful attention to each hit. Small regions of predicted structural similarity and low-confidence in the predictions should be considered weak evidence, and **not** used for confident structural prediction. Be conservative in your use of protein structural prediction tools for functional prediction. Use it last and be *most* suspicious of its results.
 
 # Using & Interpreting HHPred with Caution
+
+Below, we offer an abbreviated and targeted guide for using HHPred prediction in the context of phage genome annotation in CPT Apollo. For a detailed protocol written by the tool developers, including helpful information about the confidence in interpretation, see their paper **Protein Sequence Analysis Using the MPI Bioinformatics Toolkit** on [Pubmed](https://pubmed.ncbi.nlm.nih.gov/33315308/) or the [journal website](https://currentprotocols.onlinelibrary.wiley.com/doi/full/10.1002/cpbi.108).
 
 ##### **Input -  Getting your protein sequence from Apollo to HHPred**
 
@@ -116,7 +122,7 @@ HHPred on hypothetical proteins
 >    {: .solution}
 {: .question}
 
-What HHPred developers have to say about checking homology. Go to the documentation at [https://github.com/soedinglab/hh-suite/wiki](https://github.com/soedinglab/hh-suite/wiki) and search: **How can I verify if a database match is homologous?**
+What HHPred developers have to say about checking homology. Go to the documentation at [https://github.com/soedinglab/hh-suite/wiki](https://github.com/soedinglab/hh-suite/wiki) and search: **How can I verify if a database match is homologous?** Also see the **Commentary** section in the detailed protocol written by the tool developers on [Pubmed](https://pubmed.ncbi.nlm.nih.gov/33315308/) or the [journal website](https://currentprotocols.onlinelibrary.wiley.com/doi/full/10.1002/cpbi.108).
 
 # Annotation in Apollo Based on HHPred Results
 
